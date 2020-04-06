@@ -1,0 +1,10 @@
+tekst: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi.
+H1: F3A889F923B7FFE4A13C94A4B338345392462E55AF30E9727EA5CCFB9A4EE41A
+H2: 34A0419BFD008E91F0BECEC307DCED02E177C81C94613FD64DCD4FDFA98C32FD
+H3: F3A889F923B7FFE4A13C94A4B338345392462E55AF30E9727EA5CCFB9A4EE41A
+
+1a H1 i H3 dają dokładnie ten sam hash. Zmiana jednego znaku powoduje, że hash jest całkowicie inny od hasha z oryginalnego tekstu.
+2a Tak
+2b Brak silnej odporności implikuje brak odporności na kolizje. Brak słabej odporności implikuje brak silnej odporności. Jeśli funkcja nie ma własności silnej odporności to potrafimy dla danego m1 znaleźć takie inne m2, że mają one równe skróty, czyli kolizja. Jeśli funkcja nie ma własności słabej odporności to potrafimy dla wiadomosći m1 wyliczyć hash h, po czym odwrócić go znajdując takie m2, że H(m2) = h = H(m1).
+3a Owszem można wykorzystać algorytm AES, tak aby generował jednokierunkowe skróty wiadomości, jednak niekoniecznie w trybie ECB. Tryb ten charakteryzuje się dość słabą dyfuzją oraz słabym ukrywaniem data patterns. Doskonale widać co na obrazach bitmapowych, gdzie są duże fragmenty o tych samych wartościach pikseli. Jeśli chcielibyśmy jednak użyć AES ECB, to należy się upewnić, że plik lub wiadomość, którą szyfrujemy, nie zawiera często powtarzających się data patterns.
+	skrót: Tak, wypadałoby jednak zapewnić tekst bez data patterns dla tryby ECB.
